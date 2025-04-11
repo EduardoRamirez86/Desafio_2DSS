@@ -14,9 +14,14 @@ if (isset($_GET['id'])) {
             $_SESSION['cart'] = [];
         }
 
+        // Inicializar el stock en la sesión si no está configurado
+        if (!isset($_SESSION['stock'][$product_id])) {
+            $_SESSION['stock'][$product_id] = $producto['stock'];
+        }
+        
         // Validar stock en la sesión
         $cantidad_actual = $_SESSION['cart'][$product_id]['cantidad'] ?? 0;
-        if ($cantidad_actual < $_SESSION['stock'][$product_id]) {
+        if ($_SESSION['stock'][$product_id] > 0) {
             $_SESSION['cart'][$product_id] = [
                 'producto' => $producto,
                 'cantidad' => $cantidad_actual + 1
@@ -25,7 +30,7 @@ if (isset($_GET['id'])) {
             // Reducir el stock en la sesión
             $_SESSION['stock'][$product_id]--;
         } else {
-            $_SESSION['error'] = "Stock excedido. Máximo disponible: " . $_SESSION['stock'][$product_id];
+            $_SESSION['error'] = "Stock agotado para este producto.";
         }
     }
 }
