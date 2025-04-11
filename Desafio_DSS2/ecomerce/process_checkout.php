@@ -1,6 +1,6 @@
 <?php
 // process_checkout.php
-session_start();
+
 require(__DIR__ . '/../includes/db.php');
 require(__DIR__ . '/../includes/functions.php');
 
