@@ -5,16 +5,23 @@
     <p>&copy; <?php echo date('Y'); ?> Mi Tienda. Todos los derechos reservados.</p>
 </footer>
 <script>
-  const toggle = document.createElement("button");
-  toggle.className = "toggle-dark btn btn-secondary";
-  toggle.innerText = "🌙 Modo Oscuro";
-  document.body.appendChild(toggle);
+  // Cargar el estado del modo oscuro desde localStorage
+  document.addEventListener("DOMContentLoaded", () => {
+    const isDarkMode = localStorage.getItem("dark-mode") === "true";
+    if (isDarkMode) {
+      document.body.classList.add("dark-mode");
+    }
 
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    toggle.innerText = document.body.classList.contains("dark-mode")
-      ? "☀️ Modo Claro"
-      : "🌙 Modo Oscuro";
+    const toggle = document.createElement("button");
+    toggle.className = "toggle-dark btn btn-secondary";
+    toggle.innerText = isDarkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro";
+    document.body.appendChild(toggle);
+
+    toggle.addEventListener("click", () => {
+      const isDark = document.body.classList.toggle("dark-mode");
+      localStorage.setItem("dark-mode", isDark); // Guardar el estado en localStorage
+      toggle.innerText = isDark ? "☀️ Modo Claro" : "🌙 Modo Oscuro";
+    });
   });
 </script>
 </body>
