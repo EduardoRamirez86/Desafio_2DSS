@@ -1,64 +1,79 @@
 <?php
 // process_checkout.php
+session_start();
+require(__DIR__ . '/../includes/db.php');
+require(__DIR__ . '/../includes/functions.php');
 
+// Validar existencia de datos POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header("Location: checkout.php");
+    exit();
+}
 
-// Función para validar con regex
+// Función de validación (mejor en functions.php)
 function validar($campo, $regex) {
     return preg_match($regex, $campo);
 }
 
-// Recibir datos del formulario
-$buyer_name  = trim($_POST['buyer_name']);
-$dui         = trim($_POST['dui']);
-$card_number = trim($_POST['card_number']);
-$exp_date    = trim($_POST['exp_date']);
-$buyer_email = trim($_POST['buyer_email']);
+// Sanitizar y obtener datos
+$buyer_name  = filter_input(INPUT_POST, 'buyer_name', FILTER_SANITIZE_STRING);
+$dui         = filter_input(INPUT_POST, 'dui', FILTER_SANITIZE_STRING);
+$card_number = filter_input(INPUT_POST, 'card_number', FILTER_SANITIZE_STRING);
+$exp_date    = filter_input(INPUT_POST, 'exp_date', FILTER_SANITIZE_STRING);
+$buyer_email = filter_input(INPUT_POST, 'buyer_email', FILTER_SANITIZE_EMAIL);
 
 // Validaciones
 $errores = [];
 
-// Nombre (solo letras y espacios, 3-50 caracteres)
-if (!validar($buyer_name, "/^[a-zA-Z\s]{3,50}$/")) {
-    $errores[] = "Nombre inválido.";
+if (!validar($buyer_name, "/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}$/")) {
+    $errores[] = "Nombre inválido (solo letras y espacios)";
 }
 
-// DUI: 8 dígitos, guión y 1 dígito
 if (!validar($dui, "/^\d{8}-\d$/")) {
-    $errores[] = "DUI inválido.";
+    $errores[] = "Formato DUI incorrecto (12345678-9)";
 }
 
-// Número de tarjeta: 4 grupos de 4 dígitos separados por guiones
 if (!validar($card_number, "/^\d{4}-\d{4}-\d{4}-\d{4}$/")) {
-    $errores[] = "Número de tarjeta inválido.";
+    $errores[] = "Tarjeta inválida (use 16 dígitos con guiones)";
 }
 
-// Fecha de vencimiento: MM/AA
 if (!validar($exp_date, "/^(0[1-9]|1[0-2])\/\d{2}$/")) {
-    $errores[] = "Fecha de vencimiento inválida.";
+    $errores[] = "Fecha debe ser MM/AA (ej: 12/25)";
 }
 
-// Email
 if (!filter_var($buyer_email, FILTER_VALIDATE_EMAIL)) {
-    $errores[] = "Correo inválido.";
+    $errores[] = "Correo electrónico inválido";
 }
 
-include("includes/header.php");
-
-if (!empty($errores)) {
-    echo "<h2>Se encontraron los siguientes errores:</h2><ul>";
-    foreach ($errores as $error) {
-        echo "<li>$error</li>";
-    }
-    echo "</ul>";
-    echo '<a href="checkout.php" class="btn btn-warning">Regresar</a>';
-} else {
-    // Simulación exitosa
-    echo "<h2>Compra simulada con éxito</h2>";
-    echo "<p>Gracias por su compra, $buyer_name.</p>";
-    // Opcional: limpiar el carrito tras la simulación
-    unset($_SESSION['cart']);
-    echo '<a href="index.php" class="btn btn-primary">Volver a la tienda</a>';
-}
-
-include("includes/footer.php");
+// Incluir cabecera después de procesamiento
+require(__DIR__ . '/../includes/header.php');
 ?>
+
+<div class="container mt-5">
+    <?php if (!empty($errores)): ?>
+        <div class="alert alert-danger">
+            <h4>Errores encontrados:</h4>
+            <ul>
+                <?php foreach ($errores as $error): ?>
+                    <li><?= htmlspecialchars($error) ?></li>
+                <?php endforeach; ?>
+            </ul>
+            <a href="checkout.php" class="btn btn-warning">Corregir Datos</a>
+        </div>
+    <?php else: ?>
+        <div class="alert alert-success">
+            <h2>✅ Compra simulada exitosamente</h2>
+            <p class="lead">Gracias por su compra, <strong><?= htmlspecialchars($buyer_name) ?></strong></p>
+            <p>Recibirá un correo de confirmación en: <em><?= htmlspecialchars($buyer_email) ?></em></p>
+            
+            <?php 
+            // Limpiar carrito
+            unset($_SESSION['cart']); 
+            ?>
+            
+            <a href="index.php" class="btn btn-primary">Volver a la Tienda</a>
+        </div>
+    <?php endif; ?>
+</div>
+
+<?php require(__DIR__ . '/../includes/footer.php'); ?>
