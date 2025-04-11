@@ -29,54 +29,50 @@ INSERT INTO categories (nombre) VALUES
 ('Libros');
 
 -- ================== INSERTAR PRODUCTOS ================== --
-
--- Categoría 1: Electrónica
+-- Electrónica (Categoría 1)
 INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
-(1, 'Smartphone Modelo A', 250.00, 10, 'https://source.unsplash.com/featured/?smartphone'),
-(1, 'Laptop Modelo B', 500.00, 5, 'https://source.unsplash.com/featured/?laptop'),
-(1, 'Tablet Modelo C', 300.00, 7, 'https://source.unsplash.com/featured/?tablet'),
-(1, 'Smartwatch Modelo D', 150.00, 12, 'https://source.unsplash.com/featured/?smartwatch'),
-(1, 'Cámara Digital Modelo E', 400.00, 8, 'https://source.unsplash.com/featured/?camera');
+(1, 'Smartphone Modelo A', 250.00, 10, 'https://images.unsplash.com/photo-1605170439002-90845e8c0137'),
+(1, 'Laptop Modelo B', 500.00, 5, 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853'),
+(1, 'Tablet Modelo C', 300.00, 7, 'https://images.unsplash.com/photo-1544244011-77a1c8553936'),
+(1, 'Smartwatch Modelo D', 150.00, 12, 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a'),
+(1, 'Cámara Digital Modelo E', 400.00, 8, 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32');
 
--- Categoría 2: Ropa
+-- Ropa (Categoría 2)
 INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
-(2, 'Camiseta Básica', 15.00, 50, 'https://source.unsplash.com/featured/?tshirt'),
-(2, 'Jeans Moderno', 40.00, 20, 'https://source.unsplash.com/featured/?jeans'),
-(2, 'Chaqueta Casual', 60.00, 15, 'https://source.unsplash.com/featured/?jacket'),
-(2, 'Vestido Elegante', 80.00, 10, 'https://source.unsplash.com/featured/?dress'),
-(2, 'Zapatos Deportivos', 70.00, 25, 'https://source.unsplash.com/featured/?shoes');
+(2, 'Camiseta Básica', 15.00, 50, 'https://images.unsplash.com/photo-1581655353564-df123a1eb820'),
+(2, 'Jeans Moderno', 40.00, 20, 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246'),
+(2, 'Chaqueta Casual', 60.00, 15, 'https://images.unsplash.com/photo-1551028719-00167b16eac5'),
+(2, 'Vestido Elegante', 80.00, 10, 'https://images.unsplash.com/photo-1572804013427-4d7ca7268217'),
+(2, 'Zapatos Deportivos', 70.00, 25, 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2');
 
--- Categoría 3: Hogar
+-- Hogar (Categoría 3)
 INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
-(3, 'Lámpara de Mesa', 25.00, 30, 'https://source.unsplash.com/featured/?lamp'),
-(3, 'Alfombra Decorativa', 80.00, 10, 'https://source.unsplash.com/featured/?carpet'),
-(3, 'Juego de Sábanas', 45.00, 25, 'https://source.unsplash.com/featured/?sheets'),
-(3, 'Sofá Moderno', 750.00, 3, 'https://source.unsplash.com/featured/?sofa'),
-(3, 'Mesa de Centro', 150.00, 8, 'https://source.unsplash.com/featured/?coffee-table');
+(3, 'Lámpara de Mesa', 25.00, 30, 'https://images.unsplash.com/photo-1580477667995-2b94f01c9516'),
+(3, 'Alfombra Decorativa', 80.00, 10, 'https://images.unsplash.com/photo-1604627870781-56ee155d6e4a'),
+(3, 'Juego de Sábanas', 45.00, 25, 'https://images.unsplash.com/photo-1582582621959-48d27397dc69'),
+(3, 'Sofá Moderno', 750.00, 3, 'https://images.unsplash.com/photo-1555041469-586a2148d792'),
+(3, 'Mesa de Centro', 150.00, 8, 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92');
 
--- Categoría 4: Deportes
+-- Deportes (Categoría 4)
 INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
-(4, 'Bicicleta de Montaña', 300.00, 6, 'https://source.unsplash.com/featured/?mountain-bike'),
-(4, 'Raqueta de Tenis', 85.00, 15, 'https://source.unsplash.com/featured/?tennis-racket'),
-(4, 'Pelota de Fútbol', 25.00, 40, 'https://source.unsplash.com/featured/?soccer-ball'),
-(4, 'Zapatillas Deportivas', 90.00, 20, 'https://source.unsplash.com/featured/?sports-shoes'),
-(4, 'Camiseta Deportiva', 30.00, 35, 'https://source.unsplash.com/featured/?sportswear');
+(4, 'Bicicleta de Montaña', 300.00, 6, 'https://images.unsplash.com/photo-1485965120184-e220f721d03e'),
+(4, 'Raqueta de Tenis', 85.00, 15, 'https://images.unsplash.com/photo-1575361204480-aadea25e6e68'),
+(4, 'Pelota de Fútbol', 25.00, 40, 'https://images.unsplash.com/photo-1614632537197-38d0abc8a019'),
+(4, 'Zapatillas Deportivas', 90.00, 20, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff'),
+(4, 'Camiseta Deportiva', 30.00, 35, 'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb');
 
--- Categoría 5: Belleza
+-- Belleza (Categoría 5)
 INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
-(5, 'Perfume Floral', 55.00, 18, 'https://source.unsplash.com/featured/?perfume'),
-(5, 'Crema Facial', 35.00, 22, 'https://source.unsplash.com/featured/?facial-cream'),
-(5, 'Labial Elegante', 20.00, 40, 'https://source.unsplash.com/featured/?lipstick'),
-(5, 'Set de Maquillaje', 90.00, 10, 'https://source.unsplash.com/featured/?makeup'),
-(5, 'Secador de Pelo', 120.00, 7, 'https://source.unsplash.com/featured/?hair-dryer');
+(5, 'Perfume Floral', 55.00, 18, 'https://images.unsplash.com/photo-1615228938090-6ee30d233c5c'),
+(5, 'Crema Facial', 35.00, 22, 'https://images.unsplash.com/photo-1620916297395-335b1bf5b932'),
+(5, 'Labial Elegante', 20.00, 40, 'https://images.unsplash.com/photo-1586495777744-4413f21062fa'),
+(5, 'Set de Maquillaje', 90.00, 10, 'https://images.unsplash.com/photo-1596462502278-27bfdc403348'),
+(5, 'Secador de Pelo', 120.00, 7, 'https://images.unsplash.com/photo-1596703261355-140f20c0c6ad');
 
--- Categoría 6: Libros
+-- Libros (Categoría 6)
 INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
-(6, 'Novela de Misterio', 18.00, 35, 'https://source.unsplash.com/featured/?mystery-book'),
-(6, 'Libro de Cocina', 22.00, 20, 'https://source.unsplash.com/featured/?cookbook'),
-(6, 'Manual de Programación', 30.00, 12, 'https://source.unsplash.com/featured/?programming-book'),
-(6, 'Libro de Historia', 25.00, 18, 'https://source.unsplash.com/featured/?history-book'),
-(6, 'Libro Infantil', 15.00, 40, 'https://source.unsplash.com/featured/?children-book');
-
--- Eliminar el campo reserved_stock de la tabla products
-ALTER TABLE products DROP COLUMN reserved_stock;
+(6, 'Novela de Misterio', 18.00, 35, 'https://images.unsplash.com/photo-1544947950-fa07a98d237f'),
+(6, 'Libro de Cocina', 22.00, 20, 'https://images.unsplash.com/photo-1506880018603-83d5b814b5a6'),
+(6, 'Manual de Programación', 30.00, 12, 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6'),
+(6, 'Libro de Historia', 25.00, 18, 'https://images.unsplash.com/photo-1495446815901-a7297e633e8d'),
+(6, 'Libro Infantil', 15.00, 40, 'https://images.unsplash.com/photo-1579281401167-48deeabf23b9');
