@@ -84,7 +84,7 @@ body.dark-mode .card-product {
 
 body.dark-mode .card-product .title,
 body.dark-mode .card-product .price {
-  color: var(--accent-dark);
+  color: var (--accent-dark);
 }
 
 body.dark-mode .btn-custom {
@@ -99,7 +99,7 @@ body.dark-mode .btn-outline-custom {
 
 body.dark-mode .btn-outline-custom:hover {
   background-color: var(--accent-dark);
-  color: var(--black);
+  color: var (--black);
 }
 
 body.dark-mode .table-custom thead {
@@ -706,4 +706,861 @@ h2 {
 .tooltip-custom:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
+}
+
+/* ================== ESTILOS PARA EL CARRITO ================== */
+
+/* Contenedor del carrito */
+.cart-container {
+  background-color: var(--bg-light);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del carrito */
+.cart-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Tabla del carrito */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-table th, .cart-table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.cart-table td {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.cart-table tr:hover {
+  background-color: var(--bg-light);
+}
+
+/* Botón de eliminar */
+.cart-table .btn-danger {
+  background-color: #dc3545;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-table .btn-danger:hover {
+  background-color: #a71d2a;
+  transform: scale(1.05);
+}
+
+/* Total del carrito */
+.cart-total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+  text-align: right;
+  margin-top: 1rem;
+}
+
+/* Botón de proceder a comprar */
+.cart-checkout-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-checkout-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Mensaje de carrito vacío */
+.cart-empty {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #888;
+  margin-top: 2rem;
+}
+
+/* ================== ALERTAS ================== */
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+}
+
+/* ================== ANIMACIONES ================== */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  .cart-table th, .cart-table td {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+
+  .cart-title {
+    font-size: 1.8rem;
+  }
+
+  .cart-checkout-btn {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .cart-total {
+    font-size: 1.2rem;
+  }
+}
+
+/* ================== DECORACIONES ================== */
+.cart-highlight {
+  background-color: var(--accent);
+  color: var(--black);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: var(--radius);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.cart-highlight:hover {
+  background-color: #e6c200;
+}
+
+/* ================== SOMBRAS ================== */
+.cart-shadow {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-shadow:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ================== DIVISORES ================== */
+.cart-divider {
+  height: 2px;
+  background: var(--primary);
+  margin: 2rem 0;
+  border-radius: var(--radius);
+}
+
+/* ================== TOOLTIP ================== */
+.cart-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cart-tooltip .tooltip-text {
+  visibility: hidden;
+  width: 150px;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  text-align: center;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.cart-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ================== BADGES ================== */
+.cart-badge {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius);
+  display: inline-block;
+}
+
+.cart-badge:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ================== ICONOS ================== */
+.cart-icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-right: 0.5rem;
+}
+
+.cart-icon:hover {
+  color: var(--primary-dark);
+}
+
+/* ================== BOTONES DE ACCIÓN ================== */
+.cart-action-btn {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-action-btn:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* ================== GRADIENT BACKGROUND BOX ================== */
+.cart-box-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ================== ESTILOS AVANZADOS PARA EL CARRITO ================== */
+
+/* Contenedor principal del carrito */
+.cart-container {
+  background: linear-gradient(135deg, var(--bg-light), #ffffff);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* Título del carrito */
+.cart-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Tabla del carrito */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cart-table th, .cart-table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+  background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cart-table td {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.cart-table tr:hover {
+  background-color: var(--bg-light);
+  transition: background-color 0.3s ease;
+}
+
+/* Botón de eliminar */
+.cart-table .btn-danger {
+  background-color: #dc3545;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-table .btn-danger:hover {
+  background-color: #a71d2a;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Total del carrito */
+.cart-total {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+  text-align: right;
+  margin-top: 1rem;
+  border-top: 2px dashed var(--primary);
+  padding-top: 1rem;
+}
+
+/* Botón de proceder a comprar */
+.cart-checkout-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  color: var(--white);
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-checkout-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Mensaje de carrito vacío */
+.cart-empty {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #888;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+/* ================== ICONOS Y BADGES ================== */
+.cart-icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-right: 0.5rem;
+}
+
+.cart-icon:hover {
+  color: var(--primary-dark);
+}
+
+.cart-badge {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius);
+  display: inline-block;
+}
+
+.cart-badge:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ================== ALERTAS ================== */
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* ================== ANIMACIONES ================== */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+  }
+}
+
+.glow {
+  animation: glow 1.5s infinite;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  .cart-table th, .cart-table td {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+
+  .cart-title {
+    font-size: 1.8rem;
+  }
+
+  .cart-checkout-btn {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .cart-total {
+    font-size: 1.2rem;
+  }
+}
+
+/* ================== DECORACIONES ================== */
+.cart-highlight {
+  background-color: var(--accent);
+  color: var(--black);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: var(--radius);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.cart-highlight:hover {
+  background-color: #e6c200;
+}
+
+/* ================== SOMBRAS ================== */
+.cart-shadow {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-shadow:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ================== DIVISORES ================== */
+.cart-divider {
+  height: 2px;
+  background: var(--primary);
+  margin: 2rem 0;
+  border-radius: var (--radius);
+}
+
+/* ================== TOOLTIP ================== */
+.cart-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cart-tooltip .tooltip-text {
+  visibility: hidden;
+  width: 150px;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  text-align: center;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.cart-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ================== BOTONES DE ACCIÓN ================== */
+.cart-action-btn {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-action-btn:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* ================== GRADIENT BACKGROUND BOX ================== */
+.cart-box-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ================== ESTILOS AVANZADOS PARA FORMULARIOS ================== */
+
+/* Contenedor del formulario */
+.form-container {
+  background: linear-gradient(135deg, var(--bg-light), #ffffff);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* Título del formulario */
+.form-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Campos del formulario */
+.form-control {
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.form-control.is-valid {
+  border-color: #28a745;
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+  box-shadow: 0 0 8px rgba(220, 53, 69, 0.5);
+}
+
+/* Etiquetas */
+.form-group label {
+  font-weight: bold;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Botón de envío */
+.form-submit-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  color: var(--white);
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Mensajes de validación */
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.valid-feedback {
+  color: #28a745;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* ================== ANIMACIONES ================== */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+  }
+}
+
+.glow {
+  animation: glow 1.5s infinite;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  .form-title {
+    font-size: 1.8rem;
+  }
+
+  .form-submit-btn {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+/* ================== DECORACIONES ================== */
+.form-highlight {
+  background-color: var(--accent);
+  color: var(--black);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: var(--radius);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.form-highlight:hover {
+  background-color: #e6c200;
+}
+
+/* ================== SOMBRAS ================== */
+.form-shadow {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-shadow:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ================== DIVISORES ================== */
+.form-divider {
+  height: 2px;
+  background: var(--primary);
+  margin: 2rem 0;
+  border-radius: var(--radius);
+}
+
+/* ================== TOOLTIP ================== */
+.form-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.form-tooltip .tooltip-text {
+  visibility: hidden;
+  width: 150px;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  text-align: center;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.form-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ================== BADGES ================== */
+.form-badge {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius);
+  display: inline-block;
+}
+
+.form-badge:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ================== ICONOS ================== */
+.form-icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-right: 0.5rem;
+}
+
+.form-icon:hover {
+  color: var(--primary-dark);
+}
+
+/* ================== BOTONES DE ACCIÓN ================== */
+.form-action-btn {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-action-btn:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* ================== GRADIENT BACKGROUND BOX ================== */
+.form-box-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ================== CAMPOS DE TEXTO ================== */
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.input-group .form-control {
+  flex: 1;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group .input-group-text {
+  background-color: var(--primary);
+  color: var(--white);
+  border: 2px solid var(--primary);
+  border-left: none;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+/* ================== CHECKBOXES Y RADIO BUTTONS ================== */
+.form-check-input {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary-dark);
+}
+
+.form-check-label {
+  font-size: 1rem;
+  color: var(--primary-dark);
+}
+
+/* ================== SELECT ================== */
+.form-select {
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
 }
