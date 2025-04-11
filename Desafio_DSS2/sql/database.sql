@@ -77,3 +77,6 @@ INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
 (6, 'Manual de Programación', 30.00, 12, 'https://source.unsplash.com/featured/?programming-book'),
 (6, 'Libro de Historia', 25.00, 18, 'https://source.unsplash.com/featured/?history-book'),
 (6, 'Libro Infantil', 15.00, 40, 'https://source.unsplash.com/featured/?children-book');
+
+-- Eliminar el campo reserved_stock de la tabla products
+ALTER TABLE products DROP COLUMN reserved_stock;

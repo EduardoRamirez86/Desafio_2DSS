@@ -13,16 +13,19 @@ if (isset($_GET['id'])) {
         if (!isset($_SESSION['cart'])) {
             $_SESSION['cart'] = [];
         }
-        
-        // Validar stock
+
+        // Validar stock en la sesión
         $cantidad_actual = $_SESSION['cart'][$product_id]['cantidad'] ?? 0;
-        if ($cantidad_actual < $producto['stock']) {
+        if ($cantidad_actual < $_SESSION['stock'][$product_id]) {
             $_SESSION['cart'][$product_id] = [
                 'producto' => $producto,
                 'cantidad' => $cantidad_actual + 1
             ];
+
+            // Reducir el stock en la sesión
+            $_SESSION['stock'][$product_id]--;
         } else {
-            $_SESSION['error'] = "Stock excedido. Máximo disponible: " . $producto['stock'];
+            $_SESSION['error'] = "Stock excedido. Máximo disponible: " . $_SESSION['stock'][$product_id];
         }
     }
 }

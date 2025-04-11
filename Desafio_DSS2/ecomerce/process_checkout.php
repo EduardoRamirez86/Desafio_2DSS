@@ -67,6 +67,16 @@ require(__DIR__ . '/../includes/header.php');
             <p>Recibirá un correo de confirmación en: <em><?= htmlspecialchars($buyer_email) ?></em></p>
             
             <?php 
+            // Disminuir el stock real
+            foreach ($_SESSION['cart'] as $id => $item) {
+                $cantidad = $item['cantidad'];
+
+                $stmt = $conn->prepare("UPDATE products SET stock = stock - ? WHERE id = ?");
+                $stmt->bind_param("ii", $cantidad, $id);
+                $stmt->execute();
+                $stmt->close();
+            }
+
             // Limpiar carrito
             unset($_SESSION['cart']); 
             ?>

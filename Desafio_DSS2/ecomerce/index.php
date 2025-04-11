@@ -17,14 +17,24 @@ $categorias = obtenerCategorias($conn);
       if (count($productos) > 0):
          foreach ($productos as $producto):
     ?>
+    <?php
+    // Sincronizar el stock en la sesión con el stock de la base de datos si no está configurado
+    if (!isset($_SESSION['stock'][$producto['id']])) {
+        $_SESSION['stock'][$producto['id']] = $producto['stock'];
+    }
+    ?>
         <div class="col-md-4">
             <div class="card mb-3">
                 <img src="<?php echo $producto['image_url']; ?>" class="card-img-top" alt="<?php echo $producto['nombre']; ?>">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $producto['nombre']; ?></h5>
                     <p class="card-text">Precio: $<?php echo number_format($producto['precio'], 2); ?></p>
-                    <p class="card-text">Stock: <?php echo $producto['stock']; ?></p>
-                    <a href="add_to_cart.php?id=<?php echo $producto['id']; ?>" class="btn btn-primary">Agregar al carrito</a>
+                    <p class="card-text">Stock: <?php echo $_SESSION['stock'][$producto['id']]; ?></p>
+                    <?php if ($_SESSION['stock'][$producto['id']] > 0): ?>
+                        <a href="add_to_cart.php?id=<?php echo $producto['id']; ?>" class="btn btn-primary">Agregar al carrito</a>
+                    <?php else: ?>
+                        <button class="btn btn-secondary" disabled>Sold Out</button>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
