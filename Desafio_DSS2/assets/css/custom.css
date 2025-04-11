@@ -197,6 +197,33 @@ body.dark-mode .footer a {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.btn-primary {
+  background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background: var(--accent);
+  color: var(--black);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+}
+
+.btn-secondary:hover {
+  background: #e6c200;
+  transform: scale(1.05);
+}
+
 /* ================== FORMULARIOS ================== */
 .form-control {
   border: 2px solid var(--primary);
@@ -246,6 +273,34 @@ body.dark-mode .footer a {
 .card-hover:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  border: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+
+.card-text {
+  color: #555;
 }
 
 /* ================== SOMBRAS ================== */
@@ -585,4 +640,70 @@ body.dark-mode footer {
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* ================== ENCABEZADOS ================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.3rem;
+}
+
+/* ================== DECORACIONES ================== */
+.ribbon {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  background: var(--accent);
+  color: var(--black);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ribbon:hover {
+  background: #e6c200;
+}
+
+/* ================== TOOLTIP ================== */
+.tooltip-custom {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-custom .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  text-align: center;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-custom:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
