@@ -1,145 +1,460 @@
-/* Tipografía y estilo general */
+/* ================== RESET Y FUNDAMENTOS ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: all 0.3s ease-in-out;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  background: #f5f7fa;
+  color: #333;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================== VARIABLES PERSONALIZADAS ================== */
+:root {
+  --primary: #004e92;
+  --primary-dark: #000428;
+  --accent: #ffd700;
+  --bg-light: #f0f2f5;
+  --white: #ffffff;
+  --black: #000000;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --radius: 12px;
+  --transition: 0.3s ease-in-out;
+
+  --bg-dark: #121212;
+  --text-dark: #e0e0e0;
+  --surface-dark: #1e1e1e;
+  --card-dark: #2a2a2a;
+  --accent-dark: #bb86fc;
+}
+
+/* ================== MODO OSCURO ================== */
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode .navbar-custom {
+  background: linear-gradient(to right, #1f1f1f, #2c2c2c);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .navbar-custom .nav-link {
+  color: var(--text-dark) !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--accent-dark);
+}
+
+body.dark-mode .card-product {
+  background-color: var(--card-dark);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .card-product .title,
+body.dark-mode .card-product .price {
+  color: var(--accent-dark);
+}
+
+body.dark-mode .btn-custom {
+  background-color: var(--accent-dark);
+  color: var(--black);
+}
+
+body.dark-mode .btn-outline-custom {
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
+}
+
+body.dark-mode .btn-outline-custom:hover {
+  background-color: var(--accent-dark);
+  color: var(--black);
+}
+
+body.dark-mode .table-custom thead {
+  background-color: var(--accent-dark);
+  color: var(--black);
+}
+
+body.dark-mode .table-custom tbody tr:nth-child(even) {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="number"],
+body.dark-mode select {
+  background-color: var(--surface-dark);
+  color: var(--text-dark);
+  border: 1px solid #333;
+}
+
+body.dark-mode label {
+  color: var(--accent-dark);
+}
+
+body.dark-mode .footer {
+  background-color: var(--surface-dark);
+  color: var(--text-dark);
+  border-top: 4px solid var(--accent-dark);
+}
+
+body.dark-mode .footer a {
+  color: var(--accent-dark);
+}
+
+/* ================== TOGGLE DARK MODE BUTTON ================== */
+.toggle-dark {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-dark:hover {
+  background: var(--primary-dark);
+}
+
+/* ================== GLOBAL ================== */
 body {
-    background-color: #f4f6f9;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f0f2f5, #ffffff);
+    margin: 0;
+    padding: 0;
     color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Encabezado de la tienda */
-  .navbar {
-    background: linear-gradient(90deg, #004e92, #000428);
-    padding: 1rem 2rem;
-  }
-  
-  .navbar-brand {
-    font-weight: bold;
-    color: #ffffff !important;
-    font-size: 1.5rem;
-  }
-  
-  .navbar-nav .nav-link {
-    color: #ffffff !important;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: #ffd700 !important;
-  }
-  
-  /* Títulos destacados */
-  h1, h2, h3 {
+    scroll-behavior: smooth;
+}
+
+a {
     color: #004e92;
-    font-weight: 600;
-  }
-  
-  /* Tarjetas de productos */
-  .card {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #002855;
+}
+
+/* ================== NAVBAR ================== */
+.navbar {
+    background: linear-gradient(90deg, #000428, #004e92);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .navbar {
+    background-color: #1f1f1f;
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+    color: #ffd700 !important;
+}
+
+/* ================== HEADINGS ================== */
+h1, h2, h3, h4, h5 {
+    color: #002855;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid #004e92;
+    padding-bottom: 0.5rem;
+}
+
+/* ================== CARDS ================== */
+.card {
     border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .card-img-top {
-    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .card {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border-color: #333333;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+    height: 220px;
     object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-  
-  .card-title {
-    color: #000428;
+}
+
+.card-title {
+    font-size: 1.2rem;
     font-weight: bold;
-    font-size: 1.1rem;
-  }
-  
-  .card-text {
-    font-size: 0.95rem;
-  }
-  
-  /* Botones personalizados */
-  .btn-primary {
-    background-color: #004e92;
-    border: none;
-    border-radius: 10px;
+    color: #004e92;
+}
+
+.card-text {
+    color: #555;
+}
+
+/* ================== BUTTONS ================== */
+.btn {
+    border-radius: 12px;
+    font-weight: 600;
     padding: 0.6rem 1.2rem;
-    font-weight: bold;
-  }
-  
-  .btn-primary:hover {
-    background-color: #002855;
-  }
-  
-  .btn-danger {
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #004e92, #000428);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #002855;
+    transform: scale(1.05);
+}
+
+.btn-danger {
     background-color: #dc3545;
     border: none;
-    border-radius: 10px;
-  }
-  
-  .btn-danger:hover {
-    background-color: #b02a37;
-  }
-  
-  .btn-success {
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
+.btn-success {
     background-color: #28a745;
     border: none;
-    border-radius: 10px;
-  }
-  
-  .btn-success:hover {
-    background-color: #1e7e34;
-  }
-  
-  /* Tabla del carrito */
-  .table th, .table td {
-    vertical-align: middle !important;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-outline-dark {
+    border: 2px solid #333;
+    color: #333;
+}
+
+.btn-outline-dark:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* ================== TABLE ================== */
+.table th, .table td {
     text-align: center;
-  }
-  
-  .table th {
+    vertical-align: middle !important;
+}
+
+.table th {
     background-color: #004e92;
     color: white;
-  }
-  
-  /* Formulario de checkout */
-  form .form-group label {
+}
+
+body.dark-mode .table {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.table-striped tbody tr:nth-child(even) {
+    background-color: #f2f6fb;
+}
+
+/* ================== FORMS ================== */
+.form-group label {
     font-weight: 600;
     color: #004e92;
-  }
-  
-  form input.form-control,
-  form select.form-control {
+}
+
+.form-control {
     border-radius: 8px;
     border: 1px solid #ccc;
+    padding: 0.5rem 0.75rem;
     transition: all 0.3s ease;
-  }
-  
-  form input.form-control:focus,
-  form select.form-control:focus {
+}
+
+.form-control:focus {
     border-color: #004e92;
-    box-shadow: 0 0 5px rgba(0, 78, 146, 0.5);
-  }
-  
-  /* Mensajes y alertas */
-  .alert {
-    border-radius: 10px;
-    font-weight: 500;
-  }
-  
-  /* Footer */
-  footer {
+    box-shadow: 0 0 6px rgba(0, 78, 146, 0.4);
+}
+
+/* ================== FOOTER ================== */
+footer {
     background-color: #000428;
     color: white;
-    padding: 1rem;
     text-align: center;
-    margin-top: 40px;
+    padding: 2rem 0;
+    margin-top: 4rem;
     border-top: 4px solid #004e92;
-  }
-  
+}
+
+body.dark-mode footer {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+/* ================== ALERTS ================== */
+.alert {
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+/* ================== MODAL ================== */
+.modal-content {
+    border-radius: 15px;
+}
+
+.modal-header {
+    background-color: #004e92;
+    color: white;
+    border-bottom: none;
+}
+
+.modal-footer .btn {
+    border-radius: 8px;
+}
+
+/* ================== BADGES ================== */
+.badge-custom {
+    background-color: #004e92;
+    color: white;
+    padding: 0.4em 0.6em;
+    font-size: 0.85rem;
+    border-radius: 8px;
+}
+
+/* ================== RESPONSIVE ================== */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* ================== ANIMATIONS ================== */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* ================== TOOLTIP PERSONALIZADO ================== */
+.tooltip-inner {
+    background-color: #004e92;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* ================== SOMBRAS DECORATIVAS ================== */
+.shadow-deep {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-inset {
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ================== DIVIDER ================== */
+.divider {
+    border-bottom: 2px dashed #ccc;
+    margin: 2rem 0;
+}
+
+/* ================== ZOOM HOVER ================== */
+.zoom-hover {
+    transition: transform 0.3s ease-in-out;
+}
+
+.zoom-hover:hover {
+    transform: scale(1.05);
+}
+
+/* ================== GRADIENT BACKGROUND BOX ================== */
+.box-gradient {
+    background: linear-gradient(135deg, #004e92, #000428);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
