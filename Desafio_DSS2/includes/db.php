@@ -3,7 +3,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "wandas86";
+$password = "";
 $dbname = "ecommerce_db";
 
 // Create connection
@@ -35,6 +35,8 @@ CREATE TABLE IF NOT EXISTS products (
     image_url VARCHAR(255) NOT NULL,
     FOREIGN KEY (category_id) REFERENCES categories(id)
 )");
+
+
 
 // Función para obtener categorías
 function obtenerCategorias($conn) {

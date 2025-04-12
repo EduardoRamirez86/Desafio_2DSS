@@ -36,8 +36,8 @@ img {
 
 /* ================== VARIABLES PERSONALIZADAS ================== */
 :root {
-  --primary: #004e92;
-  --primary-dark: #000428;
+  --primary: #aa038b;
+  --primary-dark: #81006c;
   --accent: #ffd700;
   --bg-light: #f0f2f5;
   --white: #ffffff;
@@ -339,7 +339,6 @@ body.dark-mode .footer a {
 /* ================== GLOBAL ================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #f0f2f5, #ffffff);
     margin: 0;
     padding: 0;
     color: #333;
@@ -358,7 +357,7 @@ a:hover {
 
 /* ================== NAVBAR ================== */
 .navbar {
-    background: linear-gradient(90deg, #000428, #004e92);
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
     padding: 1rem 2rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -384,9 +383,9 @@ body.dark-mode .navbar {
     color: #ffd700 !important;
 }
 
-/* ================== HEADINGS ================== */
+/* ================== HEADINGS ================== */--accent
 h1, h2, h3, h4, h5 {
-    color: #002855;
+    color: #000000;
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -419,7 +418,7 @@ body.dark-mode .card {
 
 .card-img-top {
     height: 220px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .card-title {
@@ -441,13 +440,13 @@ body.dark-mode .card {
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, #004e92, #000428);
+    background: linear-gradient(45deg, var(--primary), var(--primary-dark));
     color: white;
     border: none;
 }
 
 .btn-primary:hover {
-    background: #002855;
+    background: var(--primary);
     transform: scale(1.05);
 }
 
@@ -519,12 +518,12 @@ body.dark-mode .table {
 
 /* ================== FOOTER ================== */
 footer {
-    background-color: #000428;
+    background-color: var(--primary);
     color: white;
     text-align: center;
     padding: 2rem 0;
     margin-top: 4rem;
-    border-top: 4px solid #004e92;
+    border-top: 1px solid var(--black);
 }
 
 body.dark-mode footer {
@@ -645,19 +644,19 @@ body.dark-mode footer {
 /* ================== ENCABEZADOS ================== */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  color: var(--primary-dark);
+  color: black;
   margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 2.5rem;
-  border-bottom: 3px solid var(--primary);
+  border-bottom: 2px solid rgb(206, 206, 206);
   padding-bottom: 0.5rem;
 }
 
 h2 {
   font-size: 2rem;
-  border-bottom: 2px solid var(--primary);
+  border-bottom: 1px solid lightgray;
   padding-bottom: 0.3rem;
 }
 
@@ -1564,3 +1563,28 @@ h2 {
   border-color: var(--accent);
   box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
 }
+
+
+/* =================Principal =================*/
+
+#principal {
+    color: white;
+    background-image: 
+    linear-gradient(to left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 30%, rgba(0, 0, 0, 0.8) 70%, rgba(0,0,0,0.5) 100%),
+    url(../img/principal.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#principal h1 {
+    color: white;
+    font-size: 4rem;
+}
+
+@media (max-width: 768px) {
+    #principal h1 {
+        font-size: 2.5rem;
+    }
+}
+

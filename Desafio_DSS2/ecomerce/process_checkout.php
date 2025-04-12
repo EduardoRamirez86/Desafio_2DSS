@@ -16,10 +16,10 @@ function validar($campo, $regex) {
 }
 
 // Sanitizar y obtener datos
-$buyer_name  = filter_input(INPUT_POST, 'buyer_name', FILTER_SANITIZE_STRING);
-$dui         = filter_input(INPUT_POST, 'dui', FILTER_SANITIZE_STRING);
-$card_number = filter_input(INPUT_POST, 'card_number', FILTER_SANITIZE_STRING);
-$exp_date    = filter_input(INPUT_POST, 'exp_date', FILTER_SANITIZE_STRING);
+$buyer_name  = filter_input(INPUT_POST, 'buyer_name');
+$dui         = filter_input(INPUT_POST, 'dui');
+$card_number = filter_input(INPUT_POST, 'card_number');
+$exp_date    = filter_input(INPUT_POST, 'exp_date');
 $buyer_email = filter_input(INPUT_POST, 'buyer_email', FILTER_SANITIZE_EMAIL);
 
 // Validaciones
@@ -62,7 +62,7 @@ require(__DIR__ . '/../includes/header.php');
         </div>
     <?php else: ?>
         <div class="alert alert-success">
-            <h2>✅ Compra simulada exitosamente</h2>
+            <h2>✅ Compra realizada exitosamente</h2>
             <p class="lead">Gracias por su compra, <strong><?= htmlspecialchars($buyer_name) ?></strong></p>
             <p>Recibirá un correo de confirmación en: <em><?= htmlspecialchars($buyer_email) ?></em></p>
             

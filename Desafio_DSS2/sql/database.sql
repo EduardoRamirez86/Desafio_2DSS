@@ -29,50 +29,26 @@ INSERT INTO categories (nombre) VALUES
 ('Libros');
 
 -- ================== INSERTAR PRODUCTOS ================== --
--- Electrónica (Categoría 1)
+-- PEGAR EN LA BASE DE DATOS PARA CARGAR DATOS INICIALES
+-- Refrescos (Categoría 1)
 INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
-(1, 'Smartphone Modelo A', 250.00, 10, 'https://images.unsplash.com/photo-1605170439002-90845e8c0137'),
-(1, 'Laptop Modelo B', 500.00, 5, 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853'),
-(1, 'Tablet Modelo C', 300.00, 7, 'https://images.unsplash.com/photo-1544244011-77a1c8553936'),
-(1, 'Smartwatch Modelo D', 150.00, 12, 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a'),
-(1, 'Cámara Digital Modelo E', 400.00, 8, 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32');
+(1, 'Refresco de Cola 500ml', 1.25, 100, 'https://images.unsplash.com/photo-1603398938378-cdd9e61a3f3b'),
+(1, 'Jugo Natural de Naranja 330ml', 1.50, 80, 'https://images.unsplash.com/photo-1582719478250-dc7f8cfa9c87'),
+(1, 'Té Helado Limón 350ml', 1.10, 90, 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e'),
+(1, 'Bebida Energética 250ml', 1.75, 60, 'https://images.unsplash.com/photo-1585314064901-bfbbeff38159'),
+(1, 'Agua Mineral 600ml', 0.90, 120, 'https://images.unsplash.com/photo-1550565101-a2b12e9b4fa0');
+-- Comida (Categoría 2)
+INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
+(2, 'Papas Fritas Clásicas 150g', 1.60, 100, 'https://images.unsplash.com/photo-1604908177225-6a7bd43b6243'),
+(2, 'Tostaditas de Maíz 120g', 1.40, 85, 'https://images.unsplash.com/photo-1589308078050-9720756a68c2'),
+(2, 'Galletas Saladas 200g', 1.30, 90, 'https://images.unsplash.com/photo-1616099321024-53c659f5a122'),
+(2, 'Nueces Mixtas 100g', 2.50, 70, 'https://images.unsplash.com/photo-1628172150576-0f9e1caa2642'),
+(2, 'Sándwich Envasado', 3.00, 50, 'https://images.unsplash.com/photo-1574755398543-4f6f3b9e3cf3');
 
--- Ropa (Categoría 2)
+-- Postres (Categoría 3)
 INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
-(2, 'Camiseta Básica', 15.00, 50, 'https://images.unsplash.com/photo-1581655353564-df123a1eb820'),
-(2, 'Jeans Moderno', 40.00, 20, 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246'),
-(2, 'Chaqueta Casual', 60.00, 15, 'https://images.unsplash.com/photo-1551028719-00167b16eac5'),
-(2, 'Vestido Elegante', 80.00, 10, 'https://images.unsplash.com/photo-1572804013427-4d7ca7268217'),
-(2, 'Zapatos Deportivos', 70.00, 25, 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2');
-
--- Hogar (Categoría 3)
-INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
-(3, 'Lámpara de Mesa', 25.00, 30, 'https://images.unsplash.com/photo-1580477667995-2b94f01c9516'),
-(3, 'Alfombra Decorativa', 80.00, 10, 'https://images.unsplash.com/photo-1604627870781-56ee155d6e4a'),
-(3, 'Juego de Sábanas', 45.00, 25, 'https://images.unsplash.com/photo-1582582621959-48d27397dc69'),
-(3, 'Sofá Moderno', 750.00, 3, 'https://images.unsplash.com/photo-1555041469-586a2148d792'),
-(3, 'Mesa de Centro', 150.00, 8, 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92');
-
--- Deportes (Categoría 4)
-INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
-(4, 'Bicicleta de Montaña', 300.00, 6, 'https://images.unsplash.com/photo-1485965120184-e220f721d03e'),
-(4, 'Raqueta de Tenis', 85.00, 15, 'https://images.unsplash.com/photo-1575361204480-aadea25e6e68'),
-(4, 'Pelota de Fútbol', 25.00, 40, 'https://images.unsplash.com/photo-1614632537197-38d0abc8a019'),
-(4, 'Zapatillas Deportivas', 90.00, 20, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff'),
-(4, 'Camiseta Deportiva', 30.00, 35, 'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb');
-
--- Belleza (Categoría 5)
-INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
-(5, 'Perfume Floral', 55.00, 18, 'https://images.unsplash.com/photo-1615228938090-6ee30d233c5c'),
-(5, 'Crema Facial', 35.00, 22, 'https://images.unsplash.com/photo-1620916297395-335b1bf5b932'),
-(5, 'Labial Elegante', 20.00, 40, 'https://images.unsplash.com/photo-1586495777744-4413f21062fa'),
-(5, 'Set de Maquillaje', 90.00, 10, 'https://images.unsplash.com/photo-1596462502278-27bfdc403348'),
-(5, 'Secador de Pelo', 120.00, 7, 'https://images.unsplash.com/photo-1596703261355-140f20c0c6ad');
-
--- Libros (Categoría 6)
-INSERT INTO products (category_id, nombre, precio, stock, image_url) VALUES
-(6, 'Novela de Misterio', 18.00, 35, 'https://images.unsplash.com/photo-1544947950-fa07a98d237f'),
-(6, 'Libro de Cocina', 22.00, 20, 'https://images.unsplash.com/photo-1506880018603-83d5b814b5a6'),
-(6, 'Manual de Programación', 30.00, 12, 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6'),
-(6, 'Libro de Historia', 25.00, 18, 'https://images.unsplash.com/photo-1495446815901-a7297e633e8d'),
-(6, 'Libro Infantil', 15.00, 40, 'https://images.unsplash.com/photo-1579281401167-48deeabf23b9');
+(3, 'Brownie Empacado', 1.80, 60, 'https://images.unsplash.com/photo-1599785209792-19aa706e0a56'),
+(3, 'Cupcake de Vainilla', 2.00, 55, 'https://images.unsplash.com/photo-1601976421374-0611f43c0c2c'),
+(3, 'Galletas de Chocolate 150g', 1.90, 80, 'https://images.unsplash.com/photo-1589308078050-9720756a68c2'),
+(3, 'Pastelito de Fresa Individual', 2.20, 40, 'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f'),
+(3, 'Gelatina Frutal Empacada', 1.00, 70, 'https://images.unsplash.com/photo-1600455430939-d53a04e8eb31');
