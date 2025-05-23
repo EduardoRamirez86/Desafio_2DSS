@@ -29,7 +29,7 @@
         @yield('content')
     </div>
     <footer class="flex mt-auto">
-        <p>&copy; {{ date('Y') }} Mi Tienda. Todos los derechos reservados.</p>
+        <p>© {{ date('Y') }} Mi Tienda. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
