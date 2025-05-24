@@ -13,11 +13,10 @@ class CategorySeeder extends Seeder
         $now = Carbon::now();
 
         DB::table('categories')->insert([
-            ['nombre' => 'Bebidas',      'created_at' => $now, 'updated_at' => $now],
-            ['nombre' => 'Snacks',       'created_at' => $now, 'updated_at' => $now],
-            ['nombre' => 'Postres',      'created_at' => $now, 'updated_at' => $now],
-            ['nombre' => 'Panadería',    'created_at' => $now, 'updated_at' => $now],
-            ['nombre' => 'Congelados',   'created_at' => $now, 'updated_at' => $now],
+            ['nombre' => 'Bebidas', 'created_at' => $now, 'updated_at' => $now],
+            ['nombre' => 'Snacks', 'created_at' => $now, 'updated_at' => $now],
+            ['nombre' => 'Postres', 'created_at' => $now, 'updated_at' => $now],
         ]);
+
     }
 }
